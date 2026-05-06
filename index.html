@@ -4,29 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gourav</title>
+    <title>Gourav | Frontend Developer & UI/UX Designer</title>
+    <meta name="description" content="Gourav — B.Tech student and Frontend Developer specializing in modern web design, UI/UX, and interactive user experiences.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
-    <!--- header design-->
-    <header class="header">
-        <a href="" class="logo"></a>
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
 
+    <!-- Particle background -->
+    <div id="particles-bg"></div>
 
+    <!-- Header -->
+    <header class="header" id="header">
+        <a href="#home" class="logo">Gourav.</a>
 
         <i class="fa-solid fa-bars" id="menu-icon"></i>
 
-        <nav class="navbar">
+        <nav class="navbar" id="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#services">Services</a>
@@ -35,160 +41,187 @@
         </nav>
     </header>
 
-    <!---home section design-->
+    <!-- Home -->
     <section class="home" id="home">
         <div class="home-content">
-            <h3>Hello, It,s Me</h3>
-            <h1>Gourav</h1>
+            <span class="greeting-badge">
+                <span class="dot"></span>
+                Available for Work
+            </span>
+            <h1>
+                Hi, I'm<br>
+                <span class="name-gradient">Gourav</span>
+            </h1>
             <h3>And I'm a <span class="multiple-text"></span></h3>
-            <p>As a B.Tech student with a passion for technology and web development,
-                <br>I specialize in Frontend design,website design and dynamic user experiences.
-                <br> I blend creativity with code to build modern, efficient, and impactful web solutions.
-            </p>
+            <p>B.Tech student & Frontend Developer passionate about crafting modern,
+                responsive web experiences. I blend creativity with clean code to build
+                impactful digital solutions.</p>
             <div class="social-media">
-                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://github.com/GOURAV-765"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.instagram.com/#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/gourav-b93040327"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/" title="Facebook" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://github.com/GOURAV-765" title="GitHub" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/" title="Instagram" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/gourav-b93040327" title="LinkedIn" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
             </div>
-            <a href="Gourav - Resume (1).pdf" class="btn">Download CV</a>
+            <a href="Gourav - Resume (1).pdf" class="btn" download>
+                <span><i class="fa-solid fa-download"></i> Download CV</span>
+            </a>
         </div>
 
         <div class="home-img">
-            <img src="12345.png" alt=""><!--home picture-->
+            <div class="img-wrapper">
+                <img src="12345.png" alt="Gourav - Frontend Developer">
+            </div>
         </div>
     </section>
 
-
-    <!-----about section design-->
+    <!-- About -->
     <section class="about" id="about">
-        <div class="about-img">
-            <img src="6789.png" alt=""><!--about section photo-->
+        <div class="about-img reveal">
+            <img src="6789.png" alt="About Gourav">
         </div>
 
-        <div class="about-content">
-            <h2 class="heading"> About <span>Me</span></h2>
-
-            <p>I'm Gourav, a frontend developer with a passion for creating responsive, user-friendly websites using
-                HTML, CSS, and JavaScript. I focus on clean code, modern design, and smooth user experiences. Currently
+        <div class="about-content reveal">
+            <h2 class="heading">About <span>Me</span></h2>
+            <p>I'm <strong>Gourav</strong>, a frontend developer with a passion for creating
+                responsive, user-friendly websites using HTML, CSS, and JavaScript. I focus
+                on clean code, modern design, and smooth user experiences. Currently
                 exploring React.js and always eager to learn and build something new.</p>
-            <a href="Start Project Complete Responsive Portfolio Website/read.html" class="btn">Read More</a>
+            <div class="skills-chips">
+                <span class="chip"><i class="fa-brands fa-html5"></i> HTML5</span>
+                <span class="chip"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                <span class="chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span class="chip"><i class="fa-brands fa-react"></i> React.js</span>
+                <span class="chip"><i class="fa-solid fa-palette"></i> UI/UX</span>
+                <span class="chip"><i class="fa-brands fa-figma"></i> Figma</span>
+            </div>
+            <a href="Start Project Complete Responsive Portfolio Website/read.html" class="btn">
+                <span>Read More <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
         </div>
     </section>
-    <!--service section design-->
+
+    <!-- Services -->
     <section class="services" id="services">
-        <h2 class="heading">Our<span>Services</span></h2>
+        <h2 class="heading reveal">My <span>Services</span></h2>
 
         <div class="services-container">
-            <div class="services-box">
-                <i class="fa-solid fa-code"></i>
-                <h3>web Development</h3>
-                <p>Hi, I'm Gourav, a dedicated Web Developer currently pursuing my studies at Maharaja Surajmal
-                    Institute of Technology. I enjoy building modern, responsive, and efficient websites using
-                    technologies like HTML, CSS, JavaScript, and more.</p>
-                <a href="Start Project Complete Responsive Portfolio Website/service.html" class="btn">Read More</a>
+            <div class="services-box reveal">
+                <div class="service-icon-wrap">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Building modern, responsive, and performant websites using HTML, CSS, JavaScript, and frameworks like React. Every project is crafted with clean code and pixel-perfect attention to detail.</p>
+                <a href="Start Project Complete Responsive Portfolio Website/service.html" class="btn">
+                    <span>Learn More <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
             </div>
 
-            <div class="services-box">
-                <i class="fa-solid fa-paintbrush"></i>
-                <h3>UI/UX</h3>
-                <p>Hi, I'm Gourav, a passionate UI/UX Designer focused on creating clean, intuitive, and user-friendly
-                    interfaces. I design experiences that not only look great but also solve real user problems through
-                    thoughtful interaction and usability.</p>
-                <a href="Start Project Complete Responsive Portfolio Website/service.html" class="btn">Read More</a>
+            <div class="services-box reveal">
+                <div class="service-icon-wrap">
+                    <i class="fa-solid fa-paintbrush"></i>
+                </div>
+                <h3>UI/UX Design</h3>
+                <p>Crafting clean, intuitive, and visually stunning interfaces that solve real user problems. I design experiences that are both beautiful and functional, with a focus on usability.</p>
+                <a href="Start Project Complete Responsive Portfolio Website/service.html" class="btn">
+                    <span>Learn More <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
             </div>
 
-            <div class="services-box">
-                <i class="fa-solid fa-database"></i>
-                <h3>Frontend Developer</h3>
-                <p>Hi, I'm Gourav, a passionate Frontend Developer currently studying at Maharaja Surajmal Institute of
-                    Technology. I specialize in creating responsive and user-friendly web interfaces using HTML, CSS,
-                    and JavaScript.</p>
-                <a href="Start Project Complete Responsive Portfolio Website/service.html" class="btn">Read More</a>
+            <div class="services-box reveal">
+                <div class="service-icon-wrap">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h3>Frontend Dev</h3>
+                <p>Specializing in creating responsive and interactive user interfaces. I bring designs to life with smooth animations, optimized performance, and cross-browser compatibility.</p>
+                <a href="Start Project Complete Responsive Portfolio Website/service.html" class="btn">
+                    <span>Learn More <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!--portfolio section design -->
+    <!-- Portfolio -->
     <section class="portfolio" id="portfolio">
-        <h2 class="heading">Latest<span>Project</span></h2>
+        <h2 class="heading reveal">Latest <span>Projects</span></h2>
 
         <div class="portfolio-container">
-            <div class="portfolio-box">
-                <img src="image right.png" alt="">
+            <div class="portfolio-box reveal">
+                <img src="image right.png" alt="AI Image Generator">
                 <div class="portfolio-layer">
-                    <h4>Web design</h4>
-                    <p>A web-based tool that creates high-quality images using custom prompts or AI models. Built with
-                        HTML, CSS, and JavaScript, this project showcases my skills in frontend design and real-time
-                        image rendering. Simple, fast, and user-friendly.</p>
-                    <a href="https://aimagix-smoky-five.vercel.app/"><i
-                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <h4>AI Image Generator</h4>
+                    <p>A web-based tool that creates high-quality images using custom prompts & AI models. Built with HTML, CSS, and JavaScript.</p>
+                    <a href="https://aimagix-smoky-five.vercel.app/" target="_blank" rel="noopener" title="View Project">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
                 </div>
             </div>
 
-            <div class="portfolio-box">
-                <img src="QR Code Generator.png" alt="">
+            <div class="portfolio-box reveal">
+                <img src="QR Code Generator.png" alt="QR Code Generator">
                 <div class="portfolio-layer">
-                    <h4>Web design</h4>
-                    <p>A responsive and easy-to-use web application that generates QR codes from any text or URL in
-                        real-time. Built using HTML, CSS, and JavaScript, it offers a clean interface and quick
-                        functionality, making it useful for sharing links, contact info, or plain text instantly.</p>
-                    <a href="https://qr-code-generator-two-virid.vercel.app/"><i
-                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <h4>QR Code Generator</h4>
+                    <p>A responsive web app that generates QR codes from any text or URL in real-time. Clean interface and instant functionality.</p>
+                    <a href="https://qr-code-generator-two-virid.vercel.app/" target="_blank" rel="noopener" title="View Project">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
                 </div>
             </div>
 
-            <div class="portfolio-box">
-                <img src="Currency 2.png" alt="">
+            <div class="portfolio-box reveal">
+                <img src="Currency 2.png" alt="Currency Converter">
                 <div class="portfolio-layer">
-                    <h4>Web design</h4>
-                    <p>A real-time currency converter web app that allows users to convert between different currencies
-                        instantly. Built with HTML, CSS, and JavaScript, it features a clean UI, live exchange rates,
-                        and fast conversion functionality.</p>
-                    <a href="https://currency-converter-alpha-drab.vercel.app/"><i
-                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <h4>Currency Converter</h4>
+                    <p>Real-time currency converter with live exchange rates, clean UI, and fast conversion across multiple global currencies.</p>
+                    <a href="https://currency-converter-alpha-drab.vercel.app/" target="_blank" rel="noopener" title="View Project">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
                 </div>
             </div>
-
-
         </div>
     </section>
 
-    <!---contact section design-->
+    <!-- Contact -->
     <section class="contact" id="contact">
-        <h2 class="heading">Connect With <span>Me!</span></h2>
+        <h2 class="heading reveal">Get In <span>Touch</span></h2>
 
-        <form action="gou4371@gmail.com">
+        <form action="mailto:gou4371@gmail.com" method="post" enctype="text/plain" class="reveal">
             <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
+                <input type="text" id="full-name" placeholder="Full Name" required>
+                <input type="email" id="email-address" placeholder="Email Address" required>
             </div>
             <div class="input-box">
-                <input type="number" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subject">
+                <input type="tel" id="mobile-number" placeholder="Mobile Number">
+                <input type="text" id="email-subject" placeholder="Subject">
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn">
+            <textarea id="message" rows="8" placeholder="Your Message..."></textarea>
+            <input type="submit" value="Send Message" class="btn" id="submit-btn">
         </form>
     </section>
-    <!--footer design-->
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &copy; 2025 by Gourav | All Rights Reserved.</p>
+            <p>Copyright &copy; 2025 by <span>Gourav</span> &mdash; All Rights Reserved.</p>
         </div>
-
         <div class="footer-iconTop">
-            <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+            <a href="#home" title="Back to top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
         </div>
     </footer>
 
-
-    <!--scroll reveal-->
+    <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!--typed js-->
+    <!-- Typed.js -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
     <script src="script.js"></script>
 </body>
 

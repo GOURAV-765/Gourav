@@ -3,69 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Gourav</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Services | Gourav — Frontend Developer</title>
+    <meta name="description" content="Explore Gourav's professional services — Web Development, UI/UX Design, and Frontend Development.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="service.css">
 </head>
 <body>
-    <header class="header">
+
+    <!-- Particles -->
+    <div id="particles-bg"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
         <a href="../index.html" class="logo">Gourav.</a>
-        <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <a href="../index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Back to Portfolio</span>
+        </a>
     </header>
 
-    <section class="services-detail" id="services">
-        <!-- Animated Background Elements -->
-        <div class="bg-shape shape-1"></div>
-        <div class="bg-shape shape-2"></div>
-
-        <div class="heading-container">
-            <h2 class="heading animate-fade-down">Detailed <span>Services</span></h2>
-            <p class="sub-heading animate-fade-up">Exploring how I can bring your ideas to life</p>
+    <!-- ── Hero ── -->
+    <section class="hero">
+        <div class="hero-inner">
+            <span class="badge">
+                <span class="dot"></span>
+                What I Offer
+            </span>
+            <h1>My <span class="grad">Services</span></h1>
+            <p class="hero-sub">Turning ideas into polished digital experiences — from pixel-perfect interfaces to fully functional web apps.</p>
         </div>
+    </section>
 
+    <!-- ── Service Cards ── -->
+    <section class="services-section">
         <div class="services-grid">
-            <!-- Service 1 -->
-            <div class="service-card animate-card" style="animation-delay: 0.1s;">
-                <div class="icon-wrapper">
+
+            <!-- Card 1 -->
+            <div class="service-card reveal" data-index="1">
+                <div class="card-number">01</div>
+                <div class="icon-wrap">
                     <i class="fa-solid fa-code"></i>
                 </div>
                 <h3>Web Development</h3>
-                <p>I offer professional web development services focused on building clean, responsive, and fully functional websites. Whether it’s a personal portfolio, a landing page, or a custom web application, I develop solutions that are visually appealing and user-friendly across all devices. Using modern tools like React, Node.js, and MongoDB, I create fast, secure, and scalable websites tailored to meet your specific needs. From frontend design to backend functionality, I turn ideas into complete digital experiences that help you grow online.</p>
-                <div class="skills">
-                    <span>React</span>
-                    <span>Node.js</span>
-                    <span>MongoDB</span>
+                <p>I build clean, responsive, and fully functional websites tailored to your needs. From personal portfolios to complex web applications — every project is crafted with modern tools and best practices for performance and scalability.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Responsive & Mobile-First Design</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Fast Load Times & Optimized Code</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Cross-Browser Compatibility</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> SEO-Friendly Structure</div>
+                </div>
+                <div class="tech-chips">
+                    <span class="chip">React</span>
+                    <span class="chip">Node.js</span>
+                    <span class="chip">MongoDB</span>
+                    <span class="chip">REST APIs</span>
                 </div>
             </div>
 
-            <!-- Service 2 -->
-            <div class="service-card animate-card" style="animation-delay: 0.3s;">
-                <div class="icon-wrapper">
+            <!-- Card 2 -->
+            <div class="service-card reveal" data-index="2">
+                <div class="card-number">02</div>
+                <div class="icon-wrap">
                     <i class="fa-solid fa-paintbrush"></i>
                 </div>
                 <h3>UI/UX Design</h3>
-                <p>I provide UI/UX design services focused on creating user-friendly and visually engaging digital experiences. My approach combines clean layouts, intuitive navigation, and responsive design to ensure users can interact with your website or application easily and effectively. I pay close attention to detail, usability, and consistency to make sure the interface not only looks great but also delivers a smooth and satisfying experience. Whether you're building a new product or improving an existing one, I design interfaces that align with both user needs and business goals.</p>
-                <div class="skills">
-                    <span>Figma</span>
-                    <span>UI Design</span>
-                    <span>UX Research</span>
+                <p>I design intuitive, visually engaging interfaces that prioritize the user experience. By combining clean layouts, thoughtful interaction design, and pixel-perfect detail, I create products that look great and feel natural to use.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> User-Centered Design Process</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Wireframing & Prototyping</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Consistent Design Systems</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Accessibility Compliance</div>
+                </div>
+                <div class="tech-chips">
+                    <span class="chip">Figma</span>
+                    <span class="chip">UI Design</span>
+                    <span class="chip">UX Research</span>
+                    <span class="chip">Prototyping</span>
                 </div>
             </div>
 
-            <!-- Service 3 -->
-            <div class="service-card animate-card" style="animation-delay: 0.5s;">
-                <div class="icon-wrapper">
-                    <i class="fa-brands fa-html5"></i>
+            <!-- Card 3 -->
+            <div class="service-card reveal" data-index="3">
+                <div class="card-number">03</div>
+                <div class="icon-wrap">
+                    <i class="fa-solid fa-laptop-code"></i>
                 </div>
                 <h3>Frontend Development</h3>
-                <p>As a frontend developer, I specialize in creating visually appealing, responsive, and interactive user interfaces. I build websites that not only look great but also offer a smooth and engaging experience across all devices and browsers. With a strong focus on clean code, performance, and modern design practices, I bring designs to life using efficient development techniques. Whether it's a landing page, multi-page website, or web application, I ensure that the frontend is fast, accessible, and aligned with the latest web standards.</p>
-                <div class="skills">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
+                <p>I specialize in building responsive, interactive, and performant user interfaces. With a strong focus on clean code and modern design practices, I bring designs to life with smooth animations, fast rendering, and cross-device compatibility.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Pixel-Perfect Implementation</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Smooth Animations & Transitions</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Component-Based Architecture</div>
+                    <div class="feature-item"><i class="fa-solid fa-check"></i> Performance Optimization</div>
                 </div>
+                <div class="tech-chips">
+                    <span class="chip">HTML5</span>
+                    <span class="chip">CSS3</span>
+                    <span class="chip">JavaScript</span>
+                    <span class="chip">React</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── Process Section ── -->
+    <section class="process-section">
+        <h2 class="section-title reveal">My <span>Process</span></h2>
+        <div class="process-steps">
+
+            <div class="step reveal">
+                <div class="step-num">01</div>
+                <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <h4>Discovery</h4>
+                <p>Understanding your goals, target audience, and project requirements through detailed discussion.</p>
+            </div>
+
+            <div class="step-arrow reveal"><i class="fa-solid fa-arrow-right"></i></div>
+
+            <div class="step reveal">
+                <div class="step-num">02</div>
+                <div class="step-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+                <h4>Design</h4>
+                <p>Creating wireframes and high-fidelity designs that align with your brand and user needs.</p>
+            </div>
+
+            <div class="step-arrow reveal"><i class="fa-solid fa-arrow-right"></i></div>
+
+            <div class="step reveal">
+                <div class="step-num">03</div>
+                <div class="step-icon"><i class="fa-solid fa-code"></i></div>
+                <h4>Develop</h4>
+                <p>Building with clean, maintainable code using modern technologies and best practices.</p>
+            </div>
+
+            <div class="step-arrow reveal"><i class="fa-solid fa-arrow-right"></i></div>
+
+            <div class="step reveal">
+                <div class="step-num">04</div>
+                <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
+                <h4>Launch</h4>
+                <p>Testing thoroughly and deploying your project with ongoing support and optimization.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section">
+        <div class="cta-card reveal">
+            <h2>Ready to Start a <span>Project?</span></h2>
+            <p>Let's build something great together. Reach out and let's discuss your vision.</p>
+            <div class="cta-btns">
+                <a href="../index.html#contact" class="btn-primary">
+                    <i class="fa-solid fa-paper-plane"></i> Get In Touch
+                </a>
+                <a href="../Gourav - Resume (1).pdf" class="btn-outline" download>
+                    <i class="fa-solid fa-download"></i> Download CV
+                </a>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="svc-footer">
+        <p>Copyright &copy; 2025 by <span>Gourav</span> — All Rights Reserved.</p>
+        <a href="#" class="footer-top"><i class="fa-solid fa-arrow-up"></i></a>
+    </footer>
+
+    <script>
+        /* Particles */
+        (function () {
+            const bg = document.getElementById('particles-bg');
+            const colors = ['#7c3aed','#06b6d4','#f59e0b','#a78bfa','#22d3ee'];
+            for (let i = 0; i < 28; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                const size = Math.random() * 4 + 2;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                Object.assign(p.style, {
+                    width: size+'px', height: size+'px', background: color,
+                    left: Math.random() * 100 + '%',
+                    animationDuration: (Math.random() * 18 + 10) + 's',
+                    animationDelay: (Math.random() * 10) + 's',
+                    boxShadow: `0 0 ${size*3}px ${color}`, opacity: '0'
+                });
+                bg.appendChild(p);
+            }
+        })();
+
+        /* Scroll reveal */
+        const reveals = document.querySelectorAll('.reveal');
+        new IntersectionObserver((entries) => {
+            entries.forEach((e, i) => {
+                if (e.isIntersecting) {
+                    setTimeout(() => e.target.classList.add('visible'), i * 100);
+                }
+            });
+        }, { threshold: 0.1 }).observe
+            ? (() => {
+                const obs = new IntersectionObserver((entries) => {
+                    entries.forEach((e, i) => {
+                        if (e.isIntersecting) {
+                            setTimeout(() => e.target.classList.add('visible'), i * 100);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                reveals.forEach(el => obs.observe(el));
+            })()
+            : reveals.forEach(el => el.classList.add('visible'));
+
+        /* Sticky header */
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('sticky', window.scrollY > 60);
+        });
+    </script>
 </body>
 </html>
