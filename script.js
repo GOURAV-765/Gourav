@@ -32,13 +32,13 @@ document.querySelectorAll('a, button, .btn, .services-box, .portfolio-box, .soci
 /* ══ Particle Background ══ */
 (function createParticles() {
     const bg = document.getElementById('particles-bg');
-    const colors = ['#7c3aed', '#06b6d4', '#f59e0b', '#a78bfa', '#22d3ee'];
+    const colors = ['#00ffaa', '#00c8ff', '#7b2fff', '#ff4fcb', '#00e6fa', '#a0ffdd'];
     const count = 35;
 
     for (let i = 0; i < count; i++) {
         const p = document.createElement('div');
         p.className = 'particle';
-        const size = Math.random() * 5 + 2;
+        const size = Math.random() * 4 + 1.5;
         const color = colors[Math.floor(Math.random() * colors.length)];
         const duration = Math.random() * 20 + 12;
         const delay = Math.random() * 15;
@@ -143,4 +143,41 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => {
         document.body.style.opacity = '1';
     });
+});
+
+/* ══ 3D Tilt on Cards ══ */
+document.querySelectorAll('.services-box, .portfolio-box').forEach(card => {
+    card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width  / 2;
+        const cy = rect.height / 2;
+        const rotX = ((y - cy) / cy) * -6;
+        const rotY = ((x - cx) / cx) *  6;
+        card.style.transform = `translateY(-10px) perspective(600px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+    });
+});
+
+/* ══ Aurora orb that follows cursor subtly ══ */
+const orb = document.createElement('div');
+Object.assign(orb.style, {
+    position: 'fixed',
+    width: '500px',
+    height: '500px',
+    borderRadius: '50%',
+    background: 'radial-gradient(circle, rgba(0,255,170,0.06) 0%, transparent 70%)',
+    pointerEvents: 'none',
+    zIndex: '1',
+    transform: 'translate(-50%,-50%)',
+    transition: 'left 0.8s ease, top 0.8s ease',
+    mixBlendMode: 'screen'
+});
+document.body.appendChild(orb);
+document.addEventListener('mousemove', e => {
+    orb.style.left = e.clientX + 'px';
+    orb.style.top  = e.clientY + 'px';
 });

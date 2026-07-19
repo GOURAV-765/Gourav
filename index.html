@@ -14,6 +14,9 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,8 +26,42 @@
     <div class="cursor" id="cursor"></div>
     <div class="cursor-follower" id="cursor-follower"></div>
 
+    <!-- Three.js 3D Canvas -->
+    <canvas id="three-bg"></canvas>
+
     <!-- Particle background -->
     <div id="particles-bg"></div>
+
+    <!-- CSS 3D Floating Shapes -->
+    <div id="css3d-scene" aria-hidden="true">
+        <!-- Cube 1 -->
+        <div class="css-cube" style="top:12%;left:4%;--size:55px;--dur:18s;--delay:0s">
+            <div class="face f"></div><div class="face b"></div>
+            <div class="face l"></div><div class="face r"></div>
+            <div class="face t"></div><div class="face bt"></div>
+        </div>
+        <!-- Cube 2 -->
+        <div class="css-cube" style="top:55%;right:3%;--size:38px;--dur:22s;--delay:-6s">
+            <div class="face f"></div><div class="face b"></div>
+            <div class="face l"></div><div class="face r"></div>
+            <div class="face t"></div><div class="face bt"></div>
+        </div>
+        <!-- Cube 3 -->
+        <div class="css-cube" style="top:80%;left:7%;--size:28px;--dur:26s;--delay:-12s">
+            <div class="face f"></div><div class="face b"></div>
+            <div class="face l"></div><div class="face r"></div>
+            <div class="face t"></div><div class="face bt"></div>
+        </div>
+        <!-- Rings -->
+        <div class="css-ring" style="top:30%;right:8%;--rsize:90px;--dur:14s;--delay:-3s"></div>
+        <div class="css-ring" style="top:70%;left:3%;--rsize:60px;--dur:20s;--delay:-9s"></div>
+        <!-- Triangles -->
+        <div class="css-tri" style="top:45%;left:2%;--dur:16s;--delay:-5s"></div>
+        <div class="css-tri" style="top:20%;right:5%;--dur:24s;--delay:-11s"></div>
+        <!-- Diamonds -->
+        <div class="css-diamond" style="top:65%;right:6%;--dur:19s;--delay:-7s"></div>
+        <div class="css-diamond" style="top:8%;left:12%;--dur:28s;--delay:-15s"></div>
+    </div>
 
     <!-- Header -->
     <header class="header" id="header">
@@ -77,6 +114,8 @@
 
         <div class="home-img">
             <div class="img-wrapper">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
                 <img src="12345.png" alt="Gourav - Frontend Developer">
             </div>
         </div>
@@ -84,16 +123,50 @@
 
     <!-- About -->
     <section class="about" id="about">
+
+        <!-- decorative glow orb -->
+        <div class="about-orb"></div>
+
         <div class="about-img reveal">
-            <img src="6789.png" alt="About Gourav">
+            <div class="about-img-frame">
+                <img src="6789.png" alt="About Gourav">
+                <div class="about-img-ring ring-a1"></div>
+                <div class="about-img-ring ring-a2"></div>
+                <div class="about-img-badge">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Frontend Dev</span>
+                </div>
+            </div>
         </div>
 
         <div class="about-content reveal">
+            <span class="about-badge">
+                <span class="dot"></span> B.Tech — IT Student
+            </span>
             <h2 class="heading">About <span>Me</span></h2>
             <p>I'm <strong>Gourav</strong>, a frontend developer with a passion for creating
                 responsive, user-friendly websites using HTML, CSS, and JavaScript. I focus
                 on clean code, modern design, and smooth user experiences. Currently
                 exploring React.js and always eager to learn and build something new.</p>
+
+            <!-- stat counters -->
+            <div class="about-stats">
+                <div class="astat">
+                    <span class="astat-num">10+</span>
+                    <span class="astat-label">Projects</span>
+                </div>
+                <div class="astat-divider"></div>
+                <div class="astat">
+                    <span class="astat-num">3+</span>
+                    <span class="astat-label">Years Coding</span>
+                </div>
+                <div class="astat-divider"></div>
+                <div class="astat">
+                    <span class="astat-num">5+</span>
+                    <span class="astat-label">Tech Stack</span>
+                </div>
+            </div>
+
             <div class="skills-chips">
                 <span class="chip"><i class="fa-brands fa-html5"></i> HTML5</span>
                 <span class="chip"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
@@ -102,46 +175,76 @@
                 <span class="chip"><i class="fa-solid fa-palette"></i> UI/UX</span>
                 <span class="chip"><i class="fa-brands fa-figma"></i> Figma</span>
             </div>
-            <a href="Start Project Complete Responsive Portfolio Website/read.html" class="btn">
-                <span>Read More <i class="fa-solid fa-arrow-right"></i></span>
-            </a>
+            <div class="about-cta-row">
+                <a href="Start Project Complete Responsive Portfolio Website/read.html" class="btn">
+                    <span>Read More <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="https://github.com/GOURAV-765" class="btn-ghost" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Services -->
     <section class="services" id="services">
-        <h2 class="heading reveal">My <span>Services</span></h2>
+        <div class="services-header reveal">
+            <span class="section-badge"><span class="dot"></span> What I Do</span>
+            <h2 class="heading">My <span>Services</span></h2>
+            <p class="section-sub">Turning ideas into polished digital experiences with modern tools and clean code.</p>
+        </div>
 
         <div class="services-container">
             <div class="services-box reveal">
+                <div class="svc-num">01</div>
+                <div class="svc-glow"></div>
                 <div class="service-icon-wrap">
                     <i class="fa-solid fa-code"></i>
                 </div>
                 <h3>Web Development</h3>
                 <p>Building modern, responsive, and performant websites using HTML, CSS, JavaScript, and frameworks like React. Every project is crafted with clean code and pixel-perfect attention to detail.</p>
-                <a href="Start Project Complete Responsive Portfolio Website/service.html" class="btn">
+                <ul class="svc-features">
+                    <li><i class="fa-solid fa-check"></i> Responsive &amp; Mobile-First</li>
+                    <li><i class="fa-solid fa-check"></i> SEO-Friendly Structure</li>
+                    <li><i class="fa-solid fa-check"></i> Fast &amp; Optimized Code</li>
+                </ul>
+                <a href="Start Project Complete Responsive Portfolio Website/service.html" class="btn svc-btn">
                     <span>Learn More <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
             </div>
 
             <div class="services-box reveal">
+                <div class="svc-num">02</div>
+                <div class="svc-glow"></div>
                 <div class="service-icon-wrap">
                     <i class="fa-solid fa-paintbrush"></i>
                 </div>
                 <h3>UI/UX Design</h3>
                 <p>Crafting clean, intuitive, and visually stunning interfaces that solve real user problems. I design experiences that are both beautiful and functional, with a focus on usability.</p>
-                <a href="Start Project Complete Responsive Portfolio Website/service.html" class="btn">
+                <ul class="svc-features">
+                    <li><i class="fa-solid fa-check"></i> User-Centered Design</li>
+                    <li><i class="fa-solid fa-check"></i> Wireframing &amp; Prototypes</li>
+                    <li><i class="fa-solid fa-check"></i> Accessibility Compliant</li>
+                </ul>
+                <a href="Start Project Complete Responsive Portfolio Website/service.html" class="btn svc-btn">
                     <span>Learn More <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
             </div>
 
             <div class="services-box reveal">
+                <div class="svc-num">03</div>
+                <div class="svc-glow"></div>
                 <div class="service-icon-wrap">
                     <i class="fa-solid fa-laptop-code"></i>
                 </div>
                 <h3>Frontend Dev</h3>
                 <p>Specializing in creating responsive and interactive user interfaces. I bring designs to life with smooth animations, optimized performance, and cross-browser compatibility.</p>
-                <a href="Start Project Complete Responsive Portfolio Website/service.html" class="btn">
+                <ul class="svc-features">
+                    <li><i class="fa-solid fa-check"></i> Pixel-Perfect UI</li>
+                    <li><i class="fa-solid fa-check"></i> Smooth Animations</li>
+                    <li><i class="fa-solid fa-check"></i> Cross-Browser Ready</li>
+                </ul>
+                <a href="Start Project Complete Responsive Portfolio Website/service.html" class="btn svc-btn">
                     <span>Learn More <i class="fa-solid fa-arrow-right"></i></span>
                 </a>
             </div>
@@ -150,63 +253,115 @@
 
     <!-- Portfolio -->
     <section class="portfolio" id="portfolio">
-        <h2 class="heading reveal">Latest <span>Projects</span></h2>
+        <div class="portfolio-header reveal">
+            <span class="section-badge"><span class="dot"></span> My Work</span>
+            <h2 class="heading">Latest <span>Projects</span></h2>
+            <p class="section-sub">A selection of real-world projects I've built and shipped.</p>
+        </div>
 
         <div class="portfolio-container">
             <div class="portfolio-box reveal">
-                <img src="devnova_thumbnail.png" alt="DevNova">
+                <div class="pbox-img-wrap">
+                    <img src="devnova_thumbnail.png" alt="DevNova">
+                    <div class="pbox-tag">AI Platform</div>
+                </div>
                 <div class="portfolio-layer">
-                    <h4>DevNova</h4>
+                    <div class="player-top">
+                        <h4>DevNova</h4>
+                        <div class="player-tags">
+                            <span>React</span><span>Gemini AI</span><span>Vercel</span>
+                        </div>
+                    </div>
                     <p>An AI-powered blogging platform and Creator Studio integrating Google Gemini in-browser. Brainstorm, auto-draft posts, summarize articles, and manage newsletters.</p>
-                    <a href="https://dev-nova-rho.vercel.app/" target="_blank" rel="noopener" title="View Project">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
+                    <div class="player-actions">
+                        <a href="https://dev-nova-rho.vercel.app/" target="_blank" rel="noopener" title="Live Demo" class="player-btn player-live">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <div class="portfolio-box reveal">
-                <img src="image right.png" alt="AI Image Generator">
+                <div class="pbox-img-wrap">
+                    <img src="image right.png" alt="AI Image Generator">
+                    <div class="pbox-tag">AI Tool</div>
+                </div>
                 <div class="portfolio-layer">
-                    <h4>AI Image Generator</h4>
-                    <p>A web-based tool that creates high-quality images using custom prompts & AI models. Built with HTML, CSS, and JavaScript.</p>
-                    <a href="https://aimagix-smoky-five.vercel.app/" target="_blank" rel="noopener" title="View Project">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
+                    <div class="player-top">
+                        <h4>AI Image Generator</h4>
+                        <div class="player-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                    </div>
+                    <p>A web-based tool that creates high-quality images using custom prompts &amp; AI models. Built with HTML, CSS, and JavaScript.</p>
+                    <div class="player-actions">
+                        <a href="https://aimagix-smoky-five.vercel.app/" target="_blank" rel="noopener" class="player-btn player-live">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <div class="portfolio-box reveal">
-                <img src="QR Code Generator.png" alt="QR Code Generator">
+                <div class="pbox-img-wrap">
+                    <img src="QR Code Generator.png" alt="QR Code Generator">
+                    <div class="pbox-tag">Web App</div>
+                </div>
                 <div class="portfolio-layer">
-                    <h4>QR Code Generator</h4>
+                    <div class="player-top">
+                        <h4>QR Code Generator</h4>
+                        <div class="player-tags">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
+                    </div>
                     <p>A responsive web app that generates QR codes from any text or URL in real-time. Clean interface and instant functionality.</p>
-                    <a href="https://qr-code-generator-two-virid.vercel.app/" target="_blank" rel="noopener" title="View Project">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
+                    <div class="player-actions">
+                        <a href="https://qr-code-generator-two-virid.vercel.app/" target="_blank" rel="noopener" class="player-btn player-live">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <div class="portfolio-box reveal">
-                <img src="Currency 2.png" alt="Currency Converter">
+                <div class="pbox-img-wrap">
+                    <img src="Currency 2.png" alt="Currency Converter">
+                    <div class="pbox-tag">Finance</div>
+                </div>
                 <div class="portfolio-layer">
-                    <h4>Currency Converter</h4>
+                    <div class="player-top">
+                        <h4>Currency Converter</h4>
+                        <div class="player-tags">
+                            <span>HTML</span><span>CSS</span><span>API</span>
+                        </div>
+                    </div>
                     <p>Real-time currency converter with live exchange rates, clean UI, and fast conversion across multiple global currencies.</p>
-                    <a href="https://currency-converter-alpha-drab.vercel.app/" target="_blank" rel="noopener" title="View Project">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
+                    <div class="player-actions">
+                        <a href="https://currency-converter-alpha-drab.vercel.app/" target="_blank" rel="noopener" class="player-btn player-live">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <div class="portfolio-box reveal">
-                <img src="Thumbnail.png" alt="Lumina Ai">
+                <div class="pbox-img-wrap">
+                    <img src="Thumbnail.png" alt="Lumina AI">
+                    <div class="pbox-tag">AI Tool</div>
+                </div>
                 <div class="portfolio-layer">
-                    <h4>Lumina AI</h4>
-                    <p>
-  An AI-based thumbnail generator that transforms text prompts into eye-catching thumbnails with a fast and user-friendly interface.
-</p>
-                    <a href="https://lumina-ai-ten-xi.vercel.app/" target="_blank" rel="noopener" title="View Project">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
+                    <div class="player-top">
+                        <h4>Lumina AI</h4>
+                        <div class="player-tags">
+                            <span>AI</span><span>JavaScript</span><span>Vercel</span>
+                        </div>
+                    </div>
+                    <p>An AI-based thumbnail generator that transforms text prompts into eye-catching thumbnails with a fast and user-friendly interface.</p>
+                    <div class="player-actions">
+                        <a href="https://lumina-ai-ten-xi.vercel.app/" target="_blank" rel="noopener" class="player-btn player-live">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -247,6 +402,128 @@
     <!-- Typed.js -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
+
+    <!-- Three.js 3D Scene -->
+    <script>
+    (function() {
+        const canvas = document.getElementById('three-bg');
+        if (!canvas || typeof THREE === 'undefined') return;
+
+        const scene    = new THREE.Scene();
+        const camera   = new THREE.PerspectiveCamera(70, innerWidth / innerHeight, 0.1, 200);
+        camera.position.z = 35;
+
+        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+        renderer.setSize(innerWidth, innerHeight);
+        renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+
+        /* Lights */
+        scene.add(new THREE.AmbientLight(0xffffff, 0.1));
+        const gL = new THREE.PointLight(0x00ffaa, 3, 80);
+        gL.position.set(-20, 15, 15);
+        scene.add(gL);
+        const bL = new THREE.PointLight(0x00c8ff, 3, 80);
+        bL.position.set(20, -15, 15);
+        scene.add(bL);
+        const pL = new THREE.PointLight(0x7b2fff, 2, 60);
+        pL.position.set(0, 0, -20);
+        scene.add(pL);
+
+        /* Wire materials */
+        const wGreen  = new THREE.MeshPhongMaterial({ color:0x00ffaa, wireframe:true, transparent:true, opacity:0.18 });
+        const wBlue   = new THREE.MeshPhongMaterial({ color:0x00c8ff, wireframe:true, transparent:true, opacity:0.14 });
+        const wPurple = new THREE.MeshPhongMaterial({ color:0x7b2fff, wireframe:true, transparent:true, opacity:0.12 });
+        const wPink   = new THREE.MeshPhongMaterial({ color:0xff4fcb, wireframe:true, transparent:true, opacity:0.10 });
+
+        /* Mesh shapes */
+        const defs = [
+            { geo: new THREE.IcosahedronGeometry(4,0),           mat: wGreen  },
+            { geo: new THREE.OctahedronGeometry(3,0),            mat: wBlue   },
+            { geo: new THREE.TorusGeometry(3,0.6,8,14),          mat: wPurple },
+            { geo: new THREE.TorusKnotGeometry(2,0.5,64,8),      mat: wGreen  },
+            { geo: new THREE.IcosahedronGeometry(2.2,1),         mat: wBlue   },
+            { geo: new THREE.OctahedronGeometry(1.8,0),          mat: wPink   },
+            { geo: new THREE.TorusGeometry(2,0.35,6,12),         mat: wBlue   },
+            { geo: new THREE.IcosahedronGeometry(1.4,0),         mat: wPurple },
+            { geo: new THREE.OctahedronGeometry(2.6,0),          mat: wGreen  },
+        ];
+
+        const meshes = defs.map(({ geo, mat }) => {
+            const m = new THREE.Mesh(geo, mat);
+            m.position.set(
+                (Math.random()-0.5)*60,
+                (Math.random()-0.5)*50,
+                (Math.random()-0.5)*30 - 5
+            );
+            m.rotation.set(Math.random()*Math.PI*2, Math.random()*Math.PI*2, Math.random()*Math.PI*2);
+            m.userData = {
+                rx: (Math.random()-0.5)*0.010,
+                ry: (Math.random()-0.5)*0.013,
+                rz: (Math.random()-0.5)*0.008,
+                fy: Math.random()*0.6+0.2,
+                fa: Math.random()*2+0.8,
+                fo: Math.random()*Math.PI*2
+            };
+            scene.add(m);
+            return m;
+        });
+
+        /* Particle field */
+        const N = 1800;
+        const pos  = new Float32Array(N*3);
+        const cols = new Float32Array(N*3);
+        const palette = [[0,1,0.67],[0,0.78,1],[0.48,0.18,1],[1,0.31,0.80]];
+        for (let i=0;i<N;i++) {
+            pos[i*3]   = (Math.random()-0.5)*120;
+            pos[i*3+1] = (Math.random()-0.5)*100;
+            pos[i*3+2] = (Math.random()-0.5)*60;
+            const c = palette[i%palette.length];
+            cols[i*3]=c[0]; cols[i*3+1]=c[1]; cols[i*3+2]=c[2];
+        }
+        const pbg = new THREE.BufferGeometry();
+        pbg.setAttribute('position', new THREE.BufferAttribute(pos,3));
+        pbg.setAttribute('color',    new THREE.BufferAttribute(cols,3));
+        const pts = new THREE.Points(pbg, new THREE.PointsMaterial({ size:0.28, vertexColors:true, transparent:true, opacity:0.65 }));
+        scene.add(pts);
+
+        /* Mouse parallax */
+        let mx=0, my=0;
+        document.addEventListener('mousemove', e => {
+            mx = (e.clientX/innerWidth  - 0.5)*2;
+            my = (e.clientY/innerHeight - 0.5)*2;
+        });
+
+        /* Resize */
+        window.addEventListener('resize', () => {
+            camera.aspect = innerWidth/innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(innerWidth, innerHeight);
+        });
+
+        /* Animate */
+        const clock = new THREE.Clock();
+        (function loop() {
+            requestAnimationFrame(loop);
+            const t = clock.getElapsedTime();
+            meshes.forEach(m => {
+                m.rotation.x += m.userData.rx;
+                m.rotation.y += m.userData.ry;
+                m.rotation.z += m.userData.rz;
+                m.position.y += Math.sin(t*m.userData.fy + m.userData.fo) * 0.012 * m.userData.fa;
+            });
+            pts.rotation.y = t * 0.018;
+            pts.rotation.x = t * 0.006;
+            gL.position.x = Math.sin(t*0.4)*25;
+            gL.position.y = Math.cos(t*0.3)*20;
+            bL.position.x = Math.cos(t*0.35)*25;
+            bL.position.y = Math.sin(t*0.25)*20;
+            camera.position.x += (mx*4 - camera.position.x)*0.025;
+            camera.position.y += (-my*3 - camera.position.y)*0.025;
+            camera.lookAt(scene.position);
+            renderer.render(scene, camera);
+        })();
+    })();
+    </script>
 </body>
 
 </html>
