@@ -181,3 +181,22 @@ document.addEventListener('mousemove', e => {
     orb.style.left = e.clientX + 'px';
     orb.style.top  = e.clientY + 'px';
 });
+
+/* ══ Contact Form Handler ══ */
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+        const fullName = document.getElementById('full-name').value;
+        const emailAddress = document.getElementById('email-address').value;
+        const mobileNumber = document.getElementById('mobile-number').value;
+        const subject = document.getElementById('email-subject').value;
+        const message = document.getElementById('message').value;
+
+        const bodyText = `Name: ${fullName}\nEmail: ${emailAddress}\nMobile: ${mobileNumber}\n\nMessage:\n${message}`;
+        const mailtoLink = `mailto:gou4371@gmail.com?subject=${encodeURIComponent(subject || 'Contact from Portfolio')}&body=${encodeURIComponent(bodyText)}`;
+        
+        window.location.href = mailtoLink;
+    });
+}
